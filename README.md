@@ -30,7 +30,7 @@ Crop the image using cropped_img=input_img[20:150,60:230]
 ### Step 8:
 Display all the Transformed images.
 ## Program:
-```
+```python
 Developed By: Vaishnavi M
 Register Number: 212221240058
 
@@ -43,9 +43,9 @@ plt.axis('off')
 plt.imshow(input_image)
 plt.show()
 rows,cols,dim = input_image.shape
-```
+
 ### i) Image Translation
-```
+
 M = np.float32([[1,0,100],
                [0,1,200],
                [0,0,1]])
@@ -53,9 +53,9 @@ translated_image = cv2.warpPerspective(input_image,M,(cols,rows))
 plt.axis('off')
 plt.imshow(translated_image)
 plt.show()
-```
+
 ### ii) Image Scaling
-```
+
 M = np.float32([[1.5,0,0],
                [0,1.8,0],
                [0,0,1]])
@@ -63,9 +63,9 @@ scaled_image = cv2.warpPerspective(input_image,M,(cols*2,rows*2))
 plt.axis('off')
 plt.imshow(scaled_image)
 plt.show()
-```
+
 ### iii)Image shearing
-```
+
 M_x = np.float32([[1,0.5,0],
                  [0,1,0],
                  [0,0,1]])
@@ -80,9 +80,9 @@ plt.show()
 plt.axis('off')
 plt.imshow(sheared_yaxis)
 plt.show()
-```
+
 ### iv)Image Reflection
-```
+
 M_x = np.float32([[1,0,0],
                  [0,-1,rows],
                  [0,0,1]])
@@ -97,9 +97,9 @@ plt.show()
 plt.axis('off')
 plt.imshow(reflected_yaxis)
 plt.show()
-```
+
 ### v)Image Rotation
-```
+
 angle = np.radians(30)
 M = np.float32([[np.cos(angle),-(np.sin(angle)),0],
                [np.sin(angle),np.cos(angle),0],
@@ -108,9 +108,9 @@ rotated_image = cv2.warpPerspective(input_image,M,(int(cols),int(rows)))
 plt.axis('off')
 plt.imshow(rotated_image)
 plt.show()
-```
+
 ### vi)Image Cropping
-```
+
 cropped_image = input_image[100:300,100:300]
 plt.axis('off')
 plt.imshow(cropped_image)
